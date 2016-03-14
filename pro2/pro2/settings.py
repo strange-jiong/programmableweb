@@ -27,10 +27,10 @@ NEWSPIDER_MODULE = 'pro2.spiders'
 #DOWNLOAD_DELAY=3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN=16
-#CONCURRENT_REQUESTS_PER_IP=16
+CONCURRENT_REQUESTS_PER_IP=6
 
 # Disable cookies (enabled by default)
-#COOKIES_ENABLED=False
+COOKIES_ENABLED=False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED=False
@@ -43,15 +43,17 @@ NEWSPIDER_MODULE = 'pro2.spiders'
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'pro2.middlewares.MyCustomSpiderMiddleware': 543,
-#}
+# SPIDER_MIDDLEWARES = {
+
+# }
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'pro2.middlewares.MyCustomDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+    # 'pro2.middlewares.MyCustomDownloaderMiddleware': 543,
+    'pro2.mymiddlewares.RotateUserAgentMiddleware': 1,
+    'pro2.mymiddlewares.ProxyMiddleware':101,
+}
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
@@ -62,7 +64,7 @@ NEWSPIDER_MODULE = 'pro2.spiders'
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'pro2.pipelines.Pro2Pipeline': 300,
+   # 'pro2.pipelines.Pro2Pipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -83,3 +85,33 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR='httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES=[]
 #HTTPCACHE_STORAGE='scrapy.extensions.httpcache.FilesystemCacheStorage'
+PROXIES=[
+{'ip_port':'110.73.51.124:8123','user_pass':''},
+{'ip_port':'110.72.47.111:8123','user_pass':''},
+{'ip_port':'219.143.142.9:80','user_pass':''},
+{'ip_port':'171.15.83.125:8888','user_pass':''},
+{'ip_port':'106.89.163.46:80','user_pass':''},
+{'ip_port':'182.90.23.233:80','user_pass':''},
+{'ip_port':'182.90.15.9:80','user_pass':''},
+{'ip_port':'182.88.231.59:8123','user_pass':''},
+{'ip_port':'121.199.7.65:8081','user_pass':''},
+{'ip_port':'121.31.198.183:8123','user_pass':''},
+{'ip_port':'182.88.129.166:8123','user_pass':''},
+{'ip_port':'171.212.67.187:8123','user_pass':''},
+{'ip_port':'182.90.19.65:80','user_pass':''},
+{'ip_port':'182.90.38.51:80','user_pass':''},
+{'ip_port':'182.90.3.84:80','user_pass':''},
+{'ip_port':'171.39.233.192:80','user_pass':''},
+{'ip_port':'114.55.29.219:80','user_pass':''},
+{'ip_port':'121.12.158.42:22','user_pass':''},
+{'ip_port':'182.90.36.219:80','user_pass':''},
+{'ip_port':'110.73.2.118:8123','user_pass':''},
+{'ip_port':'171.36.254.94:8123','user_pass':''},
+{'ip_port':'182.36.147.23:808','user_pass':''},
+{'ip_port':'121.31.148.124:8123','user_pass':''},
+{'ip_port':'182.90.4.247:80','user_pass':''},
+{'ip_port':'110.72.45.255:8123','user_pass':''},
+{'ip_port':'182.90.81.25:80','user_pass':''},
+{'ip_port':'182.90.39.198:80','user_pass':''},
+{'ip_port':'119.188.94.145:80','user_pass':''},
+]
