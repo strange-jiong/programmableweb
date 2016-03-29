@@ -24,7 +24,7 @@ class programmable(scrapy.Item):
     Followers_Number = scrapy.Field()
     Followers_Id = scrapy.Field()
     API_Homepage=scrapy.Field()
-
+    API_Provider=scrapy.Field()
 
 class followers(scrapy.Item):
     API_ID = scrapy.Field()

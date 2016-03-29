@@ -49,15 +49,17 @@ class Pro2Pipeline(object):
 				Primary_Category,\
 				Secondary_Categories,\
 				Followers_Number,\
-				API_Homepage) \
-				values(%s,%s,%s,%s,%s,%s,%s)",
+				API_Homepage,\
+				API_Provider) \
+				values(%s,%s,%s,%s,%s,%s,%s,%s)",
 							 (json.dumps(item['API_Name']),
 							  json.dumps(item['API_ID']),
 							  json.dumps(item['Description']),
 							  json.dumps(item['Primary_Category']),
 							  json.dumps(item['Secondary_Categories']),
 							  json.dumps(item['Followers_Number']),
-							  json.dumps(item['API_Homepage'])
+							  json.dumps(item['API_Homepage']),
+							  json.dumps(item['API_Provider'])
 							  ))
 			print item
 		# self.cur.close()

@@ -52,6 +52,8 @@ class ProgmSpider(scrapy.Spider):
                     'span/a/text()').extract()
             if sel.xpath('label/text()').extract()[0]=='API Homepage':
                 item['API_Homepage']=sel.xpath('span/a/text()').extract()
+            if sel.xpath('label/text()').extract()[0]=='API Provider':
+                item['API_Provider']=sel.xpath('span/a/text()').extract()
 
         item['Followers_Number'] = response.xpath(
             """//section[@id="block-views-api-followers-row-top"]/div[1]/span/text()""").extract()

@@ -62,7 +62,7 @@ NEWSPIDER_MODULE = 'pro2.spiders'
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'pro2.pipelines.Pro2Pipeline': 300,
+   # 'pro2.pipelines.Pro2Pipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
