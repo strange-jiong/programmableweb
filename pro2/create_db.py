@@ -11,7 +11,7 @@ sys.setdefaultencoding('utf-8')
 import MySQLdb
 import subprocess
 import os
-os.system('net start mysql')
+os.system('net start MySql')
 subprocess.Popen(['mysql','-uroot',])
 # subprocess.Popen(['CREATE DATABASE `test2` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci'])
 conn= MySQLdb.connect(
