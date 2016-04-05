@@ -1,8 +1,14 @@
-#programmableweb
+#programmableweb spider
 
 ##Installation:
 近日，API通用资源网站ProgrammableWeb宣布，该网站目录中的API已突破5,000大关，并预言最终所有公司都将拥有自己的API，其中甚至还包括政府官网。
 **信息来源时间：2012-02-07**
+
+依赖包:
+- scrapy 安装 pip install scrapy
+- MySQLdb 安装 pip install MySQL-python
+
+
 
 Now 2015.1
 ##Usage:
